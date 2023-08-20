@@ -5,6 +5,7 @@ const TestRouter = require("./Routes/Test.routes");
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const AtomRouter = require("./Routes/Atom.routes");
 
 require("dotenv").config();
 
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, "Frontend", "dist")));
 app.use(express.json());
 
 
+app.use("/api/atom", AtomRouter)
 app.use("/api/user", UserRouter)
 app.use("/api/test", TestRouter)
 

@@ -1,4 +1,3 @@
-const SendMail = require("../Config/SendMail")
 
 
 
@@ -10,7 +9,7 @@ exports.SendMailRoute = async (req, res) => {
     }
     try {
         const html = `<h1>HELLO THIS IS A TEST EMAIL FROM SENDGRID</h1>`
-        SendMail({ recipient: "kunal.86agency@gmail.com", subject: "TestEmail", template: html })
+
         res.status(200).send({ msg: "Email Sent" })
     } catch (error) {
         console.log(error);

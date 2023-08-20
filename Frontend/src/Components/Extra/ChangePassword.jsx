@@ -41,7 +41,7 @@ const ChangePassword = () => {
     let body = {
       providedPass: enteredOldPass,
       newPass: enteredConfirmPass,
-      email: JSON.parse(localStorage.getItem("user_detail_userapp"))?.email,
+      email: JSON.parse(localStorage.getItem("user_details_streakity"))?.email,
     };
 
     axios

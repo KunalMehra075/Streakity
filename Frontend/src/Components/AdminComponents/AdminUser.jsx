@@ -43,7 +43,7 @@ import ReusableSelectBar from "../Extra/CommonSelectFilter";
 import ReusableDateFilter from "../Extra/CommonDateFilter";
 
 const AdminUser = () => {
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("electron_details_streakity"));
 
   const dispatch = useDispatch();
   const toast = useToast();
@@ -156,7 +156,7 @@ const AdminUser = () => {
       >
         <ReusableSearchBar
           searchUrl={"user/search-user"}
-          datatype={"whiz_code"}
+          datatype={"user_code"}
           placeholder={"Search by Whiz Code"}
           Entities={"Users"}
           setData={setAllUsers}
@@ -259,7 +259,7 @@ const AdminUser = () => {
                   <Tr key={item._id + "ab"}>
                     <Td sx={cellStyle}>{index + page * 10 - 9}</Td>
 
-                    <Td sx={cellStyle}>{item?.whiz_code}</Td>
+                    <Td sx={cellStyle}>{item?.user_code}</Td>
                     <Td
                       style={{
                         ...cellStyle,
@@ -352,7 +352,7 @@ const AdminUser = () => {
                           setdeleteID(item._id);
                           onOpen();
                         }}
-                        colorScheme="red"
+                        colorScheme="blue"
                         background="red.400"
                         variant={"solid"}
                         size={"sm"}
@@ -410,7 +410,7 @@ const AdminUser = () => {
                 Cancel
               </Button>
               <Button
-                colorScheme="red"
+                colorScheme="blue"
                 onClick={() => {
                   HandleDeleteUser(deleteID);
                   onClose();
@@ -447,7 +447,7 @@ const AdminUser = () => {
                 Cancel
               </Button>
               <Button
-                colorScheme="red"
+                colorScheme="blue"
                 onClick={() => {
                   HandleUpdateUser();
                   onUpdateClose();
@@ -505,7 +505,7 @@ const AdminUser = () => {
                 Cancel
               </Button>
               <Button
-                colorScheme="red"
+                colorScheme="blue"
                 onClick={() => {
                   HandleChangePassword();
 

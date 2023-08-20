@@ -414,7 +414,7 @@ const AdminAddUser = () => {
             width={"100%"}
           >
             <Button
-              colorScheme="red"
+              colorScheme="blue"
               my="10px"
               type="submit"
               leftIcon={<FiPlusCircle />}
@@ -422,7 +422,7 @@ const AdminAddUser = () => {
               Add User
             </Button>
             <Link to="/admin/user">
-              <Button colorScheme="gray" my="10px">
+              <Button colorScheme="blue" my="10px">
                 Cancel
               </Button>
             </Link>

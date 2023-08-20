@@ -1,24 +1,22 @@
 import {
-  Container,
-  Button,
-  Text,
-  Flex,
-  useToast,
   AlertDialog,
   AlertDialogBody,
+  AlertDialogContent,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogContent,
   AlertDialogOverlay,
-  useDisclosure,
+  Button,
+  Container,
+  Flex,
   FormControl,
+  Text,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { FiBookmark, FiSettings } from "react-icons/fi";
-import { BiX } from "react-icons/bi";
-import { useDispatch, useSelector } from "react-redux";
+import { FiSettings } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getUsers } from "../../Redux/App/Action/User.action";
 
 const AdminWebsite = () => {
   const navigate = useNavigate();
@@ -93,7 +91,7 @@ const AdminWebsite = () => {
                 Cancel
               </Button>
               <Button
-                colorScheme="red"
+                colorScheme="blue"
                 onClick={() => {
                   onClose();
                 }}
@@ -134,7 +132,7 @@ const AdminWebsite = () => {
                 Cancel
               </Button>
               <Button
-                colorScheme="red"
+                colorScheme="blue"
                 onClick={() => {
                   HandleUpdateUser(OStatus);
                   onClose1();

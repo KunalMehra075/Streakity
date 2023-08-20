@@ -13,7 +13,7 @@ import insta from "../../assets/Icons/insta.png";
 import twitter from "../../assets/Icons/twitter.png";
 import youtube from "../../assets/Icons/youtube.png";
 import linkedin from "../../assets/Icons/linkedin.png";
-import logo from "../../assets/Icons/company.jpg";
+import logo from "../../assets/Icons/Streakity.png";
 
 import { MdLocalPhone, MdLocationOn, MdEmail } from "react-icons/md";
 

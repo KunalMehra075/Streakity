@@ -1,4 +1,4 @@
-import logo from "../../assets/Icons/company.jpg";
+import logo from "../../assets/Icons/Streakity.png";
 import {
   Box,
   Flex,
@@ -122,12 +122,12 @@ export default function Header() {
             h="4"
           >
             <NavLink to="/admin-login">
-              <Button colorScheme="red" borderRadius={5}>
+              <Button colorScheme="blue" borderRadius={5}>
                 Admin Login
               </Button>
             </NavLink>
             <NavLink to="/user-login">
-              <Button colorScheme="red" borderRadius={5} p="5">
+              <Button colorScheme="blue" borderRadius={5} p="5">
                 User Login
               </Button>
             </NavLink>

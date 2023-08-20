@@ -3,16 +3,16 @@ import axios from "axios";
 import * as types from "./Auth.types";
 import { BASE_URL } from "../../utils/config";
 
-export const loginAdmin = (payload, navigate, toast) => (dispatch) => {
-    dispatch({ type: types.USER_AUTH_LOGIN_LOADING });
+export const loginElectron = (payload, navigate, toast) => (dispatch) => {
+    dispatch({ type: types.ELECTRON_AUTH_LOGIN_LOADING });
 
     axios
-        .post(`${BASE_URL}/api/user/admin-login`, payload)
+        .post(`${BASE_URL}/api/atom/atom-login`, payload)
         .then((res) => {
-            dispatch({ type: types.USER_AUTH_LOGIN_SUCCESS, payload: res?.data });
+            dispatch({ type: types.ELECTRON_AUTH_LOGIN_SUCCESS, payload: res?.data });
             toast({
                 title: "Login Successfull!",
-                description: "You have succesfully logged in as an admin",
+                description: "You have succesfully logged in as an Admin",
                 status: "success",
                 duration: 4000,
                 isClosable: true,
@@ -29,7 +29,7 @@ export const loginAdmin = (payload, navigate, toast) => (dispatch) => {
                 isClosable: true,
             });
             dispatch({
-                type: types.USER_AUTH_LOGIN_ERROR,
+                type: types.ELECTRON_AUTH_LOGIN_ERROR,
                 payload: err?.response?.data?.msg,
             });
         });

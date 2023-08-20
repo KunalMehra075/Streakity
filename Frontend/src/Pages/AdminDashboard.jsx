@@ -5,7 +5,7 @@ import {
   Routes,
   useNavigate,
 } from "react-router-dom";
-import logo_light from "../assets/Icons/company.jpg";
+import logo_light from "../assets/Icons/Streakity.png";
 import avatar from "../assets/Icons/avatar.png";
 import {
   IconButton,
@@ -128,24 +128,6 @@ const SidebarContent = ({ onClose, ...rest }) => {
       >
         <Text size={"sm"}> Dashboard</Text>
       </NavItem>
-      <NavItem
-        key={"User"}
-        icon={FiUsers}
-        path={"admin/user"}
-        Active={Active}
-        setActive={setActive}
-      >
-        <Text size={"sm"}> User</Text>
-      </NavItem>
-      <NavItem
-        key={"Student"}
-        icon={FiFileText}
-        path={"admin/student"}
-        setActive={setActive}
-        Active={Active}
-      >
-        <Text size={"sm"}> Student</Text>
-      </NavItem>
 
       <NavItem
         key={"Streaks"}
@@ -195,12 +177,12 @@ const NavItem = ({ icon, children, path, Active, setActive, ...rest }) => {
         borderRadius="5px"
         role="group"
         cursor="pointer"
-        bg={path == Active ? theme1 : "white"}
+        bg={path == Active ? "linear-gradient(135deg, aqua,blue)" : "white"}
         color={path == Active ? "white" : "black"}
         fontWeight={path == Active ? "600" : "400"}
         onClick={() => setActive(path)}
         _hover={{
-          bg: theme1,
+          bg: "linear-gradient(135deg, aqua,blue)",
           color: "white",
         }}
         {...rest}
@@ -227,7 +209,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch({ type: "USER_LOGOUT" });
+    dispatch({ type: "ELECTRON_LOGOUT" });
     toast({
       title: "Logout Successfull.",
       description: "You have been successfully logged out.",
@@ -237,7 +219,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
     });
   };
 
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("electron_details_streakity"));
 
   const [DashDetails, setDashDetails] = useState({});
 

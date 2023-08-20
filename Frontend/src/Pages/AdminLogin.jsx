@@ -14,12 +14,12 @@ import {
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../assets/Icons/company.jpg";
-import { loginAdmin } from "../Redux/Auth/Auth.action";
+import logo from "../assets/Icons/Streakity.png";
+import { loginElectron } from "../Redux/Auth/Auth.action";
 import { theme1 } from "../utils/colours";
 import pattern from "../assets/pattern.jpg";
 
-export default function Login() {
+export default function AdminLogin() {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -39,7 +39,7 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(loginAdmin(form, navigate, toast));
+    dispatch(loginElectron(form, navigate, toast));
   };
 
   return (

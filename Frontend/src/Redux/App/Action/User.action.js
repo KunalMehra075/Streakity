@@ -182,7 +182,7 @@ export const UpdateUserProfile = (id, data, toast, navigate) => (dispatch) => {
                 isClosable: true,
             });
             let newuser = res?.data?.UpdatedUser
-            localStorage.setItem("user_detail_userapp", JSON.stringify(newuser));
+            localStorage.setItem("user_details_streakity", JSON.stringify(newuser));
             navigate("/user/dashboard")
         })
         .catch((err) => {

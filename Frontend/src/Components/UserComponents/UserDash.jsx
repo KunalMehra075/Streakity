@@ -27,7 +27,7 @@ import { useDispatch, useSelector } from "react-redux";
 const UserDash = () => {
   const navigate = useNavigate();
 
-  const MainUser = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const MainUser = JSON.parse(localStorage.getItem("user_details_streakity"));
   const [Streaks, setStreaks] = useState([]);
   const [page, setpage] = useState(1);
 
@@ -92,7 +92,7 @@ const UserDash = () => {
                 height={40}
               >
                 <Heading mx={"auto"} size={"3xl"}>
-                  {Streaks?.length || <Spinner></Spinner>}
+                  {Streaks?.length || 1 || <Spinner></Spinner>}
                 </Heading>
                 <AbsoluteCenter
                   left={4}
@@ -176,7 +176,7 @@ const UserDash = () => {
                         <Td sx={cellStyle}>{index + page * 10 - 9}</Td>
 
                         <Td sx={cellStyle}>
-                          <>{item?.whiz_code}</>
+                          <>{item?.user_code}</>
                         </Td>
 
                         <Td style={{ ...cellStyle }}>
@@ -185,7 +185,7 @@ const UserDash = () => {
                           </b>{" "}
                           <br />
                           <p style={{ fontSize: "13px" }}>
-                            {student?.whiz_code}
+                            {student?.user_code}
                           </p>
                         </Td>
                         <Td sx={cellStyle}>{item?.streak_subject}</Td>

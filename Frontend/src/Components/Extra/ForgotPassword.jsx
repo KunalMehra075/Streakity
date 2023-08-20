@@ -41,7 +41,7 @@ const ForgotPassword = () => {
     // }
 
     // let body = {
-    //   email: JSON.parse(localStorage.getItem("user_detail_userapp"))?.email,
+    //   email: JSON.parse(localStorage.getItem("user_details_streakity"))?.email,
     // };
     let body = {
       email: emailref.current.value,
@@ -119,7 +119,7 @@ const ForgotPassword = () => {
             >
               Send Code
             </Button>
-            <Button colorScheme="gray" onClick={() => navigate("/user")}>
+            <Button colorScheme="blue" onClick={() => navigate("/user")}>
               Go Back
             </Button>
           </Flex>

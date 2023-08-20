@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const PrivateAdminRoute = ({ children }) => {
-  const { isAuth, UserDetail, token } = useSelector(
-    (store) => store.UserAuthManager
+  const { isAuth, ElectronDetail, token } = useSelector(
+    (store) => store.ElectronAuthManager
   );
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuth && !UserDetail && !token) {
-      navigate("/user-login");
+    if (!isAuth && !ElectronDetail && !token) {
+      navigate("/admin-login");
     }
   }, [isAuth]);
 

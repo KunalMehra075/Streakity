@@ -1,6 +1,6 @@
 export default function calculateCompletionPercentage(userData) {
   const schema = [
-    "whiz_code",
+    "user_code",
     "email",
     "first_name",
     "last_name",

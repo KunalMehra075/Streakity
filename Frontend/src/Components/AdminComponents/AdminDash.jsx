@@ -15,57 +15,57 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/config";
 
 const AdminDash = () => {
-  const [DashDetails, setDashDetails] = useState({});
+  // const [DashDetails, setDashDetails] = useState({});
 
-  let AllStates = DashDetails?.AllStates;
-  let StatesObj = DashDetails?.PieObject;
-  let AllStValues = [];
-  for (let i in StatesObj) {
-    AllStValues.push(StatesObj[i]);
-  }
+  // let AllStates = DashDetails?.AllStates;
+  // let StatesObj = DashDetails?.PieObject;
+  // let AllStValues = [];
+  // for (let i in StatesObj) {
+  //   AllStValues.push(StatesObj[i]);
+  // }
 
-  const carddata1 = [
-    { head: "Total Revenue", num: DashDetails?.TotalRevenue },
-    { head: "Total Students", num: DashDetails?.TotalStudents },
-    { head: "Total Users", num: DashDetails?.TotalUsers },
-    { head: "Total Streaks", num: DashDetails?.TotalStreaks },
-  ];
-  const carddata2 = [
-    { head: "Active Users", num: DashDetails?.ActiveUsers },
-    { head: "Active Streaks", num: DashDetails?.ActiveStreaks },
-    { head: "Active Students", num: DashDetails?.ActiveStudents },
-    { head: "Active Users", num: DashDetails?.ActiveUsers },
-  ];
+  // const carddata1 = [
+  //   { head: "Total Revenue", num: DashDetails?.TotalRevenue },
+  //   { head: "Total Students", num: DashDetails?.TotalStudents },
+  //   { head: "Total Users", num: DashDetails?.TotalUsers },
+  //   { head: "Total Streaks", num: DashDetails?.TotalStreaks },
+  // ];
+  // const carddata2 = [
+  //   { head: "Active Users", num: DashDetails?.ActiveUsers },
+  //   { head: "Active Streaks", num: DashDetails?.ActiveStreaks },
+  //   { head: "Active Students", num: DashDetails?.ActiveStudents },
+  //   { head: "Active Users", num: DashDetails?.ActiveUsers },
+  // ];
 
-  const Piedata = {
-    labels: AllStates || [""],
-    datasets: [
-      {
-        label: "# of People Joined",
-        data: AllStValues || [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "#FF6384", // Red
-          "#36A2EB", // Blue
-          "#FFCE56", // Yellow
-          "#4CAF50", // Green
-          "#9C27B0", // #961595
-          "#FF9800", // Orange
-        ],
+  // const Piedata = {
+  //   labels: AllStates || [""],
+  //   datasets: [
+  //     {
+  //       label: "# of People Joined",
+  //       data: AllStValues || [12, 19, 3, 5, 2, 3],
+  //       backgroundColor: [
+  //         "#FF6384", // Red
+  //         "#36A2EB", // Blue
+  //         "#FFCE56", // Yellow
+  //         "#4CAF50", // Green
+  //         "#9C27B0", // #961595
+  //         "#FF9800", // Orange
+  //       ],
 
-        borderColor: "white",
-        borderWidth: 2,
-      },
-    ],
-  };
+  //       borderColor: "white",
+  //       borderWidth: 2,
+  //     },
+  //   ],
+  // };
 
-  const getData = () => {
-    axios
-      .get(`${BASE_URL}/api/test/get-dashboard-details`)
-      .then((res) => setDashDetails(res?.data));
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  // const getData = () => {
+  //   axios
+  //     .get(`${BASE_URL}/api/test/get-dashboard-details`)
+  //     .then((res) => setDashDetails(res?.data));
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <>
@@ -78,22 +78,22 @@ const AdminDash = () => {
         Dashboard
       </Text>
 
-      <Flex width="99%" my={3} flexWrap={"wrap"} gap={2}>
+      {/* <Flex width="99%" my={3} flexWrap={"wrap"} gap={2}>
         {carddata1.map((item) => {
           return <AdminCards key={item.head} head={item.head} num={item.num} />;
         })}
-      </Flex>
+      </Flex> */}
 
-      <Flex gap={2} direction={{ base: "column", md: "row" }}>
+      {/* <Flex gap={2} direction={{ base: "column", md: "row" }}>
         <Grid templateColumns={"repeat(2,1fr)"} width={"70%"}>
           {carddata2.map((item) => {
             return (
               <AdminCards2 key={item.head} head={item.head} num={item.num} />
             );
           })}
-        </Grid>
-        {/**<!--*------- <Pie Chart> ----------->*/}
-        <Card
+        </Grid> */}
+      {/**<!--*------- <Pie Chart> ----------->*/}
+      {/* <Card
           p={5}
           my={1}
           gap={2}
@@ -105,8 +105,8 @@ const AdminDash = () => {
             Pie Chart showing data of Users of company, all around India <br />
             (State-wise)
           </Text>
-        </Card>
-      </Flex>
+        </Card> */}
+      {/* </Flex> */}
     </>
   );
 };

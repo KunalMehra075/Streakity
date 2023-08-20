@@ -30,7 +30,7 @@ import { UpdateUserProfile } from "../../Redux/App/Action/User.action";
 
 const UserSettings = () => {
   const [ProfileDetails, setProfileDetails] = useState({});
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("user_details_streakity"));
   const navigate = useNavigate();
   const toast = useToast();
   const dispatch = useDispatch();
@@ -627,7 +627,7 @@ const UserSettings = () => {
               >
                 <Button
                   bg="green.500"
-                  colorScheme="red"
+                  colorScheme="blue"
                   my="10px"
                   px={10}
                   type="submit"
@@ -636,7 +636,7 @@ const UserSettings = () => {
                   Save Profile Details
                 </Button>
                 <Link to="/user/dashboard">
-                  <Button colorScheme="gray" my="10px" px={10}>
+                  <Button colorScheme="blue" my="10px" px={10}>
                     Cancel
                   </Button>
                 </Link>{" "}

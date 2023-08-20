@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../assets/Icons/company.jpg";
+import logo from "../assets/Icons/Streakity.png";
 import { loginUser } from "../Redux/Auth/Auth.action";
 import { theme2 } from "../utils/colours";
 import pattern from "../assets/pattern.jpg";

@@ -1,56 +1,48 @@
-import React, { useEffect, useState } from "react";
 import {
-  Route,
-  Link as RouteLink,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import logo_light from "../assets/Icons/company.jpg";
-import avatar from "../assets/Icons/avatar.png";
-import {
-  IconButton,
   Avatar,
   Box,
   CloseButton,
-  Flex,
-  HStack,
-  VStack,
-  Icon,
-  useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
-  Text,
-  useDisclosure,
+  Flex,
+  HStack,
+  Icon,
+  IconButton,
+  Image,
+  Link,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
-  Image,
-  useToast,
   Tag,
-  Heading,
+  Text,
+  VStack,
+  useColorModeValue,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import {
-  FiUser,
+  FiBookOpen,
   FiHome,
-  FiTruck,
-  FiBriefcase,
-  FiPackage,
-  FiMenu,
-  FiBell,
-  FiUsers,
-  FiChevronDown,
-  FiGitBranch,
-  FiFileText,
-  FiSend,
-  FiSettings,
+  FiList,
   FiMeh,
+  FiMenu,
+  FiPenTool,
+  FiSettings,
+  FiSmile,
 } from "react-icons/fi";
 import { useDispatch } from "react-redux";
-import { theme2 } from "../utils/colours";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
 import UserRoutes from "../Routes/UserRoutes";
+import logo_light from "../assets/Icons/Streakity.png";
+import avatar from "../assets/Icons/avatar.png";
+import {
+  BsFileBarGraph,
+  BsFillBalloonFill,
+  BsFillTreeFill,
+} from "react-icons/bs";
 
 export default function SideNav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -121,7 +113,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       </NavItem>
       <NavItem
         key={"Streaks"}
-        icon={FiMeh}
+        icon={FiSmile}
         path={"user/streaks"}
         Active={Active}
         setActive={setActive}
@@ -129,13 +121,50 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <Text size={"sm"}> Streaks</Text>
       </NavItem>
       <NavItem
-        key={"Student"}
-        icon={FiUsers}
-        path={"user/student"}
+        key={"Tasks"}
+        icon={FiList}
+        path={"user/tasks"}
+        Active={Active}
+        setActive={setActive}
+      >
+        <Text size={"sm"}> Tasks</Text>
+      </NavItem>
+      <NavItem
+        key={"Graphs"}
+        icon={BsFileBarGraph}
+        path={"user/graphs"}
+        Active={Active}
+        setActive={setActive}
+      >
+        <Text size={"sm"}> Graphs</Text>
+      </NavItem>
+
+      <NavItem
+        key={"Books"}
+        icon={FiBookOpen}
+        path={"user/books"}
         setActive={setActive}
         Active={Active}
       >
-        <Text size={"sm"}> Student</Text>
+        <Text size={"sm"}> Books</Text>
+      </NavItem>
+      <NavItem
+        key={"Habits"}
+        icon={BsFillTreeFill}
+        path={"user/habits"}
+        setActive={setActive}
+        Active={Active}
+      >
+        <Text size={"sm"}> Habits</Text>
+      </NavItem>
+      <NavItem
+        key={"Journal"}
+        icon={FiPenTool}
+        path={"user/journal"}
+        setActive={setActive}
+        Active={Active}
+      >
+        <Text size={"sm"}> Journal</Text>
       </NavItem>
       <NavItem
         key={"Settings"}
@@ -166,12 +195,12 @@ const NavItem = ({ icon, children, path, Active, setActive, ...rest }) => {
         borderRadius="5px"
         role="group"
         cursor="pointer"
-        bg={path == Active ? theme2 : "white"}
+        bg={path == Active ? "linear-gradient(135deg, aqua,blue)" : "white"}
         color={path == Active ? "white" : "black"}
         fontWeight={path == Active ? "600" : "400"}
         onClick={() => setActive(path)}
         _hover={{
-          bg: theme2,
+          bg: "linear-gradient(135deg, aqua,blue)",
           color: "white",
         }}
         {...rest}
@@ -208,7 +237,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
     });
   };
 
-  const user = JSON.parse(localStorage.getItem("user_detail_userapp"));
+  const user = JSON.parse(localStorage.getItem("user_details_streakity"));
 
   return (
     <Flex
